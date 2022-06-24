@@ -27,14 +27,14 @@
       "import": "./dist/index.js"
     }
   },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "package.json",
     "README.md",
     "dist"
   ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format=cjs,esm --dts --clean",
     "watch": "tsup src/index.ts --format=cjs,esm --dts --watch",
@@ -46,8 +46,8 @@
   },
   "dependencies": {
     "inferred-types": "^0.20.0",
-    "vite-plugin-md": "*",
-    "prismjs": "^1.28.0"
+    "prismjs": "^1.28.0",
+    "vite-plugin-md": "*"
   },
   "devDependencies": {
     "@antfu/ni": "^0.16.2",
@@ -86,6 +86,6 @@
     "@yankeeinlondon/happy-wrapper": "^2.3.0",
     "pathe": "^0.3.0",
     "unocss": "^0.39.3",
-    "vite": "^2.9.12",\
+    "vite": "^2.9.12"
   }
 }
