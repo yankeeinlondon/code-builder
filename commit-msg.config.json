@@ -1,0 +1,22 @@
+{
+    "enabled": true,
+    "revert": true,
+    "length": {
+        "min": 3,
+        "max": 52
+    },
+    "types": [
+        "build",
+        "ci",
+        "docs",
+        "feat",
+        "fix",
+        "perf",
+        "refactor",
+        "assets",
+        "devops",
+        "style",
+        "test",
+        "chore"
+    ]
+}
