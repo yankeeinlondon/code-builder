@@ -1,8 +1,8 @@
 import type { Grammar } from "prismjs";
 import Prism from "prismjs";
 import loadLanguages from "prismjs/components/index.js";
-import { CodeOptions, Highlighter, LineClassFn } from "~/types";
-import { escapeHtml, prismLanguages } from "~/utils";
+import { CodeOptions, Highlighter, LineClassFn } from "../types";
+import { escapeHtml, prismLanguages } from "../utils";
 
 function wrap(line: string, klass: LineClassFn) {
   return `<div class="${klass(line)}">${line}</div>`;
