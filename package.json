@@ -46,7 +46,8 @@
     "release": "run-s release:freshen release:validate release:bump",
     "release:freshen": "pnpm install",
     "release:validate": "run-p lint test:ci",
-    "release:bump": "bumpp"
+    "release:bump": "bumpp",
+    "prepare": "husky install"
   },
   "dependencies": {
     "inferred-types": "^0.20.0",
@@ -73,7 +74,7 @@
     "eslint-plugin-unicorn": "^42.0.0",
     "esno": "^0.16.3",
     "fp-ts": "^2.12.1",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "markdown-it": "^13.0.1",
     "npm-run-all": "^4.1.5",
     "pathe": "^0.3.0",
