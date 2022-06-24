@@ -1,11 +1,8 @@
 import type { Grammar } from "prismjs";
 import Prism from "prismjs";
 import loadLanguages from "prismjs/components/index.js";
-import type {
-  CodeOptions,
-  Highlighter,
-  LineClassFn,
-} from "../types";
+import { CodeOptions, Highlighter, LineClassFn } from "~/types";
+import { escapeHtml, prismLanguages } from "~/utils";
 
 function wrap(line: string, klass: LineClassFn) {
   return `<div class="${klass(line)}">${line}</div>`;
@@ -38,6 +35,7 @@ export const getPrismGrammar = (lang: string | undefined, options: CodeOptions):
 } => {
   const bespoke = options.languageGrammars;
   const candidate = lang || options.defaultLanguageForUnspecified;
+  const fallback = options.defaultLanguageForUnknown || options.defaultLanguage || "markdown";
 
   if (candidate.toLowerCase() in prismLanguageAliases) {
     // alias was a match
@@ -46,14 +44,14 @@ export const getPrismGrammar = (lang: string | undefined, options: CodeOptions):
       langUsed: prismLanguageAliases[candidate],
       grammar: Prism.languages[prismLanguageAliases[candidate]],
     };
-  } else if (Prism.languages[candidate]) {
+  } else if (prismLanguages.includes(candidate)) {
     // language found as stated
     loadLanguages(candidate);
     return {
       langUsed: candidate,
       grammar: Prism.languages[candidate],
     };
-  } else if (Prism.languages[candidate.toLowerCase()]) {
+  } else if (prismLanguages.includes(candidate.toLowerCase())) {
     // language found as stated (after conversion to lowercase)
     loadLanguages(candidate.toLowerCase());
     return {
@@ -64,22 +62,21 @@ export const getPrismGrammar = (lang: string | undefined, options: CodeOptions):
     // the plugin provided a bespoke Grammar for this choice
     Prism.languages[candidate] = bespoke[candidate];
     return { langUsed: candidate, grammar: bespoke[candidate] };
+  } else if (prismLanguages.includes(fallback)) {
+    loadLanguages(fallback);
+    return {
+      langUsed: fallback,
+      grammar: Prism.languages[fallback],
+    };
   } else {
-    loadLanguages(candidate);
-    if (!Prism.languages[candidate]) {
-      // couldn't find the language so fall back to defaults
-      const fallback = options.defaultLanguageForUnknown || options.defaultLanguage || "markdown";
-      loadLanguages(fallback);
-      return {
-        langUsed: fallback,
-        grammar: Prism.languages[fallback],
-      };
-    } else {
-      // language exists in Prism after load attempt
-      return { langUsed: candidate, grammar: Prism.languages[candidate] };
-    }
+    console.error(`The language passed in [${candidate}] was not found in prismJS but neither was the fallback language of "${fallback}"! Will use "plain" for now.`);
+    loadLanguages("plain");
+
+    return {
+      langUsed: "plain",
+      grammar: Prism.languages.plain,
+    };
   }
-  //
 };
 
 export const getPrismHighlighter = (options: CodeOptions): Highlighter =>
