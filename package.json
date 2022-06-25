@@ -1,6 +1,6 @@
 {
   "name": "@yankeeinlondon/code-builder",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "Adds code highlighting support to vite-plugin-md",
   "keywords": [
     "vitejs",
@@ -43,9 +43,9 @@
     "lint:test": "eslint ./test/**/*.ts --fix",
     "test": "vitest",
     "test:ci": "vitest run",
-    "prepublishOnly": "pnpm audit --fix && pnpm test:ci && pnpm install",
-    "publish": "bumpp",
-    "prepare": "husky install"
+    "release": "run-s release:validate release:bump",
+    "release:validate": "pnpm audit --fix && pnpm test:ci && pnpm install",
+    "release:bump": "bumpp"
   },
   "dependencies": {
     "inferred-types": "^0.20.0",
