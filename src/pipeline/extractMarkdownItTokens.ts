@@ -1,6 +1,5 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "pathe";
-import type Token from "markdown-it/token";
 import { toHtml } from "@yankeeinlondon/happy-wrapper";
 import type { Pipeline, PipelineStage } from "vite-plugin-md";
 import type { CodeBlockMeta, Modifier } from "../types";
@@ -22,7 +21,11 @@ function loadFile(codeFile: string, pipeline: Pipeline<PipelineStage.parser>) {
   try {
     return readFileSync(pathToCode, "utf8");
   } catch {
-    throw new Error(`Problem loading external code file: \'${pathToCode}\' which was composed of [ \'${codeFile.startsWith("/") ? process.cwd() : dirname(fileName)}\', \'${codeFile}\' ]`);
+    throw new Error(
+      `Problem loading external code file: \'${pathToCode}\' which was composed of [ \'${
+        codeFile.startsWith("/") ? process.cwd() : dirname(fileName)
+      }\', \'${codeFile}\' ]`
+    );
   }
 }
 
@@ -30,7 +33,10 @@ function loadFile(codeFile: string, pipeline: Pipeline<PipelineStage.parser>) {
  * Converts the Markdown-IT _tokens_ into a `CodeBlockMeta` data structure
  * which includes the language, modifiers, props, and code block.
  */
-export function extractMarkdownItTokens(p: Pipeline<PipelineStage.parser>, t: Token): CodeBlockMeta<"code"> {
+export function extractMarkdownItTokens(
+  p: Pipeline<PipelineStage.parser>,
+  t: any
+): CodeBlockMeta<"code"> {
   const [info, vuepressFile] = extractVPressFileSyntax(t.info);
   const matches = info.trim().match(/(([!#*]){0,2})(\w+)\s*({.*}){0,1}(.*)$/);
 
@@ -55,15 +61,19 @@ export function extractMarkdownItTokens(p: Pipeline<PipelineStage.parser>, t: To
   if (matches) {
     const [, modifiers, , lang, obj, csv] = matches;
 
-    if (obj) { fence = parseObjectSyntax(obj, p, fence); } else if (csv) {
-      fence = parseObjectSyntax(undefined, p,
-        parseCSVSyntax(csv, p, fence),
-      );
+    if (obj) {
+      fence = parseObjectSyntax(obj, p, fence);
+    } else if (csv) {
+      fence = parseObjectSyntax(undefined, p, parseCSVSyntax(csv, p, fence));
     }
 
-    if (modifiers) {fence.modifiers = [...modifiers] as Modifier[];};
+    if (modifiers) {
+      fence.modifiers = [...modifiers] as Modifier[];
+    }
 
-    if (lang) {fence.lang = lang;};
+    if (lang) {
+      fence.lang = lang;
+    }
   }
 
   if (fence.externalFile) {
@@ -76,6 +86,10 @@ export function extractMarkdownItTokens(p: Pipeline<PipelineStage.parser>, t: To
 
   return {
     ...fence,
-    trace: `MarkdownIt tokens parsed: [\n  lang: ${fence.lang},\n  externalFile: ${fence.externalFile},\n  highlight: ${JSON.stringify(fence.highlightTokens)} \n]\nProps:${JSON.stringify(fence.props, null, 2)}`,
+    trace: `MarkdownIt tokens parsed: [\n  lang: ${
+      fence.lang
+    },\n  externalFile: ${fence.externalFile},\n  highlight: ${JSON.stringify(
+      fence.highlightTokens
+    )} \n]\nProps:${JSON.stringify(fence.props, null, 2)}`,
   };
 }
