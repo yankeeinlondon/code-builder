@@ -13,6 +13,9 @@ export default defineConfig({
     api: {
       host: "0.0.0.0",
     },
+    coverage: {
+      reporter: ["json", "html"]
+    }
   },
   plugins: [
     Markdown({
