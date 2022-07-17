@@ -1,6 +1,6 @@
 {
   "name": "@yankeeinlondon/code-builder",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "description": "Adds code highlighting support to vite-plugin-md",
   "keywords": [
     "vitejs",
@@ -43,15 +43,17 @@
     "lint:test": "eslint ./test/**/*.ts --fix",
     "test": "vitest",
     "test:ci": "vitest run",
-    "release": "run-s release:validate release:bump",
-    "release:validate": "pnpm audit --fix && pnpm test:ci && pnpm install",
+    "audit:fix": "pnpm audit --fix",
+    "release": "run-s lint release:latest test:ci audit:fix release:bump",
+    "release:latest": "pnpm install",
     "release:bump": "bumpp"
   },
   "dependencies": {
+    "@yankeeinlondon/happy-wrapper": "^2.4.0",
     "inferred-types": "^0.20.0",
     "prismjs": "^1.28.0",
-    "vite-plugin-md": "*",
-    "unocss": "^0.44.3"
+    "unocss": "^0.44.3",
+    "vite-plugin-md": "*"
   },
   "devDependencies": {
     "@antfu/ni": "^0.17.2",
@@ -63,7 +65,6 @@
     "@vitejs/plugin-vue": "^3.0.0",
     "@vitest/ui": "^0.18.1",
     "@vue/test-utils": "^2.0.0",
-    "@yankeeinlondon/happy-wrapper": "^2.4.0",
     "bumpp": "^8.2.1",
     "c8": "^7.11.3",
     "eslint": "^8.18.0",
@@ -89,7 +90,6 @@
     "vue-router": "^4.0.16"
   },
   "peerDependencies": {
-    "@yankeeinlondon/happy-wrapper": ">=2.3.0",
     "markdown-it": ">=13",
     "pathe": ">=0.3.0"
   }
