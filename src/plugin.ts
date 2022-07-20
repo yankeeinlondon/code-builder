@@ -32,6 +32,7 @@ export const plugin = createBuilder("code", PipelineStage.parser)
     return p;
   })
   .meta({
-    description: "Provides highlighted code blocks via Prism or Shiki styling ecosystems",
+    description:
+      "Provides highlighted code blocks via Prism or Shiki styling ecosystems",
     parserRules: [{ ruleName: "fence", usage: "patches" }],
   });

@@ -1,119 +1,132 @@
-export type ColorByMode = [light: Color, dark: Color]
+export type HSL =
+  `hsl(${number}${string}, ${number}${string}, ${number}${string})`;
+export type HSLA =
+  `hsla(${number}${string}, ${number}${string}, ${number}${string}, ${number}${string})`;
+export type RGB =
+  `rgb(${number}${string}, ${number}${string}, ${number}${string})`;
+export type RGBA =
+  `hsla(${number}${string}, ${number}${string}, ${number}${string}, ${number}${string})`;
+export type HEX = `#${string}`;
+export type Opacity = `/${number}` | "";
+
+export type Color = `${HSL | HSLA | RGB | RGBA | HEX | ""}${Opacity}`;
+
+export type ColorByMode = [light: Color, dark: Color];
 
 /**
  * Coloration/Theming of a code block
  */
 export interface CodeColorTheme<T extends Color | ColorByMode> {
-  foreground: T
-  background: T
+  foreground: T;
+  background: T;
 
-  lineNumber: T
-  lineNumberGutter: T
-  highlight: T
+  lineNumber: T;
+  lineNumberGutter: T;
+  highlight: T;
   /** the background color for text selection */
-  textSelection: T
+  textSelection: T;
 
   /**
    * used in some grammars like SCSS where you might have `@apply`
    * but will same color as
    */
-  atrule?: T
+  atrule?: T;
 
-  keyword: T
-  attribute?: T
+  keyword: T;
+  attribute?: T;
 
-  deleted?: T
-  inserted?: T
+  deleted?: T;
+  inserted?: T;
 
-  url?: T
+  url?: T;
 
-  function?: T
-  functionName?: T
-  class?: T
-  className?: T
+  function?: T;
+  functionName?: T;
+  class?: T;
+  className?: T;
 
-  builtin: T
-  tag?: T
+  builtin: T;
+  tag?: T;
 
-  comment: T
-  blockComment?: T
-  doctype?: T
-  cdata?: T
-  prolog?: T
+  comment: T;
+  blockComment?: T;
+  doctype?: T;
+  cdata?: T;
+  prolog?: T;
 
-  pseudoElement?: T
-  pseudoClass?: T
+  pseudoElement?: T;
+  pseudoClass?: T;
 
-  property?: T
+  property?: T;
   /** will use same as "property" if not expressed separately */
-  constant?: T
+  constant?: T;
   /** will use same as "property" if not expressed separately */
-  variable?: T
+  variable?: T;
 
   /** string values */
-  string: T
+  string: T;
   /** literal value; will use string if not specified */
-  literal?: T
+  literal?: T;
   /** uses the same as "string" by default */
-  char?: T
+  char?: T;
 
   /** a boolean value; uses `builtin` if not specified */
-  boolean?: T
+  boolean?: T;
   /** uses `builtin` if not specified */
-  selector?: T
+  selector?: T;
 
-  placeholder?: T
+  placeholder?: T;
 
   /** uses `builtin` if not specified */
-  important?: T
+  important?: T;
   /** uses `builtin` if not specified */
-  delimiter?: T
+  delimiter?: T;
 
   /** any language symbol not otherwise matched, will use keyword if not stated */
-  symbol?: T
+  symbol?: T;
   /** will use "symbol" if not defined */
-  entity?: T
+  entity?: T;
   /** numeric values; will use symbol if not expressed separately  */
-  number?: T
+  number?: T;
 
-  namespace?: T
+  namespace?: T;
 
   /**
    * A form of recognized punctuation in the code
    */
-  punctuation?: T
+  punctuation?: T;
 
-  punctuationFirstChild?: T
+  punctuationFirstChild?: T;
 
   /** will use same as "punctuation" if not expressed separately */
-  operator?: T
+  operator?: T;
   /** will use same as "punctuation" if not expressed separately */
-  attrName?: T
+  attrName?: T;
 
-  attrValue?: T
-  attrValueForPunctuation?: T
-  attrValueForPunctuationFirstChild?: T
+  attrValue?: T;
+  attrValueForPunctuation?: T;
+  attrValueForPunctuationFirstChild?: T;
 
-  decorator?: T
-  regex: T
-  hexcode?: T
-  unit?: T
+  decorator?: T;
+  regex: T;
+  hexcode?: T;
+  unit?: T;
 
-  id?: T
+  id?: T;
 
-  jsonProperty?: T
+  jsonProperty?: T;
 
   /** .language-markup .token.tag */
-  markupTag?: T
+  markupTag?: T;
   /** .language-markup .token.attr-name */
-  markupAttrName?: T
+  markupAttrName?: T;
   /** .language-markup .token.punctuation  */
-  markupPunctuation?: T
+  markupPunctuation?: T;
 
-  headingText?: T
-  footerText?: T
+  headingText?: T;
+  footerText?: T;
 
-  lineHighlightBackground?: T
+  lineHighlightBackground?: T;
 
   /**
    * the text color for a highlighted line
@@ -122,16 +135,7 @@ export interface CodeColorTheme<T extends Color | ColorByMode> {
    * .line-highlight.line-highlight[data-end]:after {}
    * ```
    */
-  lineHighlightBeforeAfter?: T
+  lineHighlightBeforeAfter?: T;
   /** the background color for a highlighted line */
-  lineHighlightBackgroundBeforeAfter?: T
+  lineHighlightBackgroundBeforeAfter?: T;
 }
-
-export type HSL = `hsl(${number}${string}, ${number}${string}, ${number}${string})`
-export type HSLA = `hsla(${number}${string}, ${number}${string}, ${number}${string}, ${number}${string})`
-export type RGB = `rgb(${number}${string}, ${number}${string}, ${number}${string})`
-export type RGBA = `hsla(${number}${string}, ${number}${string}, ${number}${string}, ${number}${string})`
-export type HEX = `#${string}`
-export type Opacity = `/${number}` | ''
-
-export type Color = `${HSL | HSLA | RGB | RGBA | HEX | ''}${Opacity}`

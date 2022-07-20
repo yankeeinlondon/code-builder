@@ -19,9 +19,9 @@ export function highlightTokensToLines(fence: CodeBlockMeta<"dom">): number[] {
         }
         break;
       case "symbol":
-        // TODO: need to implement this
+      // TODO: need to implement this
     }
-  };
+  }
 
   return lines;
 }

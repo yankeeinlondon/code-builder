@@ -6,14 +6,16 @@ const HTML_REPLACEMENTS = {
   "&": "&amp;",
   "<": "&lt;",
   ">": "&gt;",
-  '"': "&quot;"
+  '"': "&quot;",
 };
 
 function replaceUnsafeChar(ch: string): string {
-  if(ch in keys(HTML_REPLACEMENTS)) {
+  if (ch in keys(HTML_REPLACEMENTS)) {
     return HTML_REPLACEMENTS[ch as keyof typeof HTML_REPLACEMENTS];
   } else {
-    console.error(`character ["${ch}"] sent to replaceUnsafeChar(ch) was not recognized!`);
+    console.error(
+      `character ["${ch}"] sent to replaceUnsafeChar(ch) was not recognized!`
+    );
     return "";
   }
 }

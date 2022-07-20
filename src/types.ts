@@ -1,6 +1,10 @@
 import type { Fragment } from "@yankeeinlondon/happy-wrapper";
 import type { Grammar } from "prismjs";
-import type { Pipeline, PipelineStage, Frontmatter as FM } from "vite-plugin-md";
+import type {
+  Pipeline,
+  PipelineStage,
+  Frontmatter as FM,
+} from "vite-plugin-md";
 import type { CodeColorTheme } from "./styles/color/color-types";
 
 export type HTML = string;
@@ -42,7 +46,15 @@ export enum Modifier {
   "!" = "!",
 }
 
-export type TokenType = "keyword" | "operator" | "punctuation" | "interpolation-punctuation" | "builtin" | "template-punctuation" | "punctuation" | "string";
+export type TokenType =
+  | "keyword"
+  | "operator"
+  | "punctuation"
+  | "interpolation-punctuation"
+  | "builtin"
+  | "template-punctuation"
+  | "punctuation"
+  | "string";
 
 export type CodeParsingStage = "code" | "dom" | "complete";
 
@@ -62,8 +74,6 @@ export interface HighlightSymbol {
   symbol: string;
 }
 
-
-
 /**
  * Tokens representing intent to highlight code; originating from any source
  * [highlight prop, csv, VuePress/Vitepress syntax]
@@ -72,7 +82,11 @@ export type HighlightToken = HighlightLine | HighlightRange | HighlightSymbol;
 
 export type RangeExpression = `${string}-${string}`;
 /** the ways in which the user might express the "highlight" property */
-export type HighlightExpression = number | RangeExpression | { symbol: string } | { from: number; to: number };
+export type HighlightExpression =
+  | number
+  | RangeExpression
+  | { symbol: string }
+  | { from: number; to: number };
 
 export interface CodeBlockProperties {
   /**
@@ -118,7 +132,11 @@ export interface CodeBlockSummary {
   props: CodeBlockProperties;
 }
 
-export type CodeFilename = boolean | "filename" | "with-path" | `name:${string}`;
+export type CodeFilename =
+  | boolean
+  | "filename"
+  | "with-path"
+  | `name:${string}`;
 
 /**
  * When a fence block is encountered it will be parsed
@@ -238,7 +256,11 @@ export type Highlighter = (
  * A callback for a block node which provides build-time capability to
  * modify a property with a callback
  */
-export type BlockCallback<T> = <S extends CodeParsingStage>(fence: CodeBlockMeta<S>, filename: string, frontmatter: Pipeline<PipelineStage.parser>["frontmatter"]) => T;
+export type BlockCallback<T> = <S extends CodeParsingStage>(
+  fence: CodeBlockMeta<S>,
+  filename: string,
+  frontmatter: Pipeline<PipelineStage.parser>["frontmatter"]
+) => T;
 
 /**
  * Options for the `code-builder` extension
@@ -265,12 +287,20 @@ export interface CodeOptions {
    * Hook into the fence mutation process _before_ the builder
    * gets involved.
    */
-  before: (fence: CodeBlockMeta<"code">, payload: Pipeline<PipelineStage.parser>, options: CodeOptions) => CodeBlockMeta<"code">;
+  before: (
+    fence: CodeBlockMeta<"code">,
+    payload: Pipeline<PipelineStage.parser>,
+    options: CodeOptions
+  ) => CodeBlockMeta<"code">;
   /**
    * Hook into the fence mutation process _after_ the builder
    * has mutated CodeFenceMeta to it's configured rules.
    */
-  after: (fence: CodeBlockMeta<"dom">, payload: Pipeline<PipelineStage.parser>, options: CodeOptions) => CodeBlockMeta<"dom">;
+  after: (
+    fence: CodeBlockMeta<"dom">,
+    payload: Pipeline<PipelineStage.parser>,
+    options: CodeOptions
+  ) => CodeBlockMeta<"dom">;
 
   /**
    * By default each _line_ in the code will be given a class of "line" but you can override this
@@ -355,7 +385,14 @@ export interface CodeOptions {
    */
   provideClipboardFunctionality: boolean | BlockCallback<boolean>;
 
-  theme?: "base" | "solarizedLight" | "material" | "dracula" | "tomorrow" | "duotone" | CodeColorTheme<any>;
+  theme?:
+    | "base"
+    | "solarizedLight"
+    | "material"
+    | "dracula"
+    | "tomorrow"
+    | "duotone"
+    | CodeColorTheme<any>;
 
   /**
    * By default light mode has code blocks with light backgrounds, and dark mode with
@@ -395,7 +432,7 @@ export interface CodeOptions {
   codeFont?: string;
 }
 export interface Frontmatter extends FM {
-    /**
+  /**
    * Brief summary info about code blocks found on page.
    *
    * Will be populated when there are at least one code and you are using
