@@ -1,7 +1,8 @@
 {
   "name": "@yankeeinlondon/code-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds code highlighting support to vite-plugin-md",
+  "packageManager": "pnpm@7.5.4",
   "keywords": [
     "vitejs",
     "vuejs",
@@ -30,11 +31,6 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "package.json",
-    "README.md",
-    "dist"
-  ],
   "scripts": {
     "build": "tsup src/index.ts --format=cjs,esm --dts --clean",
     "watch": "tsup src/index.ts --format=cjs,esm --dts --watch",
@@ -53,7 +49,10 @@
     "inferred-types": "^0.20.0",
     "pathe": "^0.3.2",
     "prismjs": "^1.28.0",
-    "unocss": "^0.44.5",
+    "unocss": "^0.44.5"
+  },
+  "peerDependencies": {
+    "markdown-it": ">=13",
     "vite-plugin-md": "*"
   },
   "devDependencies": {
@@ -67,6 +66,7 @@
     "@vitest/ui": "^0.18.1",
     "@vue/test-utils": "^2.0.2",
     "bumpp": "^8.2.1",
+    "vite-plugin-md": "^0.19.7",
     "c8": "^7.12.0",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
@@ -88,8 +88,5 @@
     "vitest": "^0.18.1",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2"
-  },
-  "peerDependencies": {
-    "markdown-it": ">=13"
   }
 }
