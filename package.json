@@ -1,6 +1,6 @@
 {
   "name": "@yankeeinlondon/code-builder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Adds code highlighting support to vite-plugin-md",
   "packageManager": "pnpm@7.5.4",
   "keywords": [
