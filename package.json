@@ -53,7 +53,7 @@
     "inferred-types": "^0.20.0",
     "pathe": "^0.3.2",
     "prismjs": "^1.28.0",
-    "unocss": "^0.44.4",
+    "unocss": "^0.44.5",
     "vite-plugin-md": "*"
   },
   "devDependencies": {
