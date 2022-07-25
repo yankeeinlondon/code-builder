@@ -1,4 +1,4 @@
-import { createBuilder, PipelineStage } from "vite-plugin-md";
+import { createBuilder, PipelineStage } from "@yankeeinlondon/builder-api";
 import type { CodeOptions } from "./types";
 import { fence } from "./mdi";
 

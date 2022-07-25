@@ -4,7 +4,7 @@ import type {
   Pipeline,
   PipelineStage,
   Frontmatter as FM,
-} from "vite-plugin-md";
+} from "@yankeeinlondon/builder-api";
 import type { CodeColorTheme } from "./styles/color/color-types";
 
 export type HTML = string;

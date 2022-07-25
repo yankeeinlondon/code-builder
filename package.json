@@ -2,7 +2,6 @@
   "name": "@yankeeinlondon/code-builder",
   "version": "1.0.3",
   "description": "Adds code highlighting support to vite-plugin-md",
-  "packageManager": "pnpm@7.5.4",
   "keywords": [
     "vitejs",
     "vuejs",
@@ -32,7 +31,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format=cjs,esm --dts --clean",
+    "build": "tsup src/index.ts --format=cjs,esm --dts --clean --external @unocss/vite",
     "watch": "tsup src/index.ts --format=cjs,esm --dts --watch",
     "lint": "run-p lint:*",
     "lint:src": "eslint ./src/**/*.ts --fix",
@@ -45,15 +44,11 @@
     "release:bump": "bumpp"
   },
   "dependencies": {
-    "@yankeeinlondon/builder-api": "^0.3.0",
+    "@yankeeinlondon/builder-api": "^0.3.3",
     "@yankeeinlondon/happy-wrapper": "^2.4.0",
-    "inferred-types": "^0.20.0",
+    "inferred-types": "^0.22.0",
     "pathe": "^0.3.2",
-    "prismjs": "^1.28.0",
-    "unocss": "^0.44.5"
-  },
-  "peerDependencies": {
-    "markdown-it": ">=13"
+    "prismjs": "^1.28.0"
   },
   "devDependencies": {
     "@antfu/ni": "^0.17.2",
@@ -63,7 +58,7 @@
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "@vitejs/plugin-vue": "^3.0.1",
-    "@vitest/ui": "^0.18.1",
+    "@vitest/ui": "^0.19.0",
     "@vue/test-utils": "^2.0.2",
     "bumpp": "^8.2.1",
     "c8": "^7.12.0",
@@ -73,10 +68,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-unicorn": "^43.0.2",
-    "esno": "^0.16.3",
     "fp-ts": "^2.12.1",
     "happy-dom": "^6.0.4",
-    "happy-wrapper": "^4.3.0",
     "markdown-it": "^13.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
@@ -84,9 +77,15 @@
     "tsup": "^6.1.3",
     "typescript": "^4.7.4",
     "vite": "^3.0.2",
-    "vite-plugin-md": "^0.19.7",
-    "vitest": "^0.18.1",
+    "vite-plugin-md": "^0.19.11",
+    "vitest": "^0.19.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2"
-  }
+  },
+  "peerDependencies": {
+    "@unocss/vite": "^0.44.5",
+    "@yankeeinlondon/builder-api": "^0.3.0",
+    "markdown-it": ">=13"
+  },
+  "packageManager": "pnpm@7.5.2"
 }
