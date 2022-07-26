@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import type { DefineComponent } from "vue";
 import { createApp, defineComponent } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
-import type { Frontmatter } from "../../src/types";
+import type { Frontmatter } from "src/types";
 
 async function importFixture(fixture: string) {
   const assets = (await import(fixture)) as {

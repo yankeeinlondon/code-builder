@@ -1,4 +1,4 @@
-import { createBuilder, PipelineStage } from "@yankeeinlondon/builder-api";
+import { createBuilder } from "@yankeeinlondon/builder-api";
 import type { CodeOptions } from "./types";
 import { fence } from "./mdi";
 
@@ -7,7 +7,7 @@ import { fence } from "./mdi";
  *
  * Provides highlighting of code features to `vite-plugin-md`
  */
-export const plugin = createBuilder("code", PipelineStage.parser)
+export const plugin = createBuilder("code", "parser")
   .options<Partial<CodeOptions>>()
   .initializer()
   .handler(async (p, o) => {

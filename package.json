@@ -85,7 +85,7 @@
   },
   "peerDependencies": {
     "@unocss/vite": "^0.44.5",
-    "@yankeeinlondon/builder-api": "^0.3.0",
+    "@yankeeinlondon/builder-api": "^0.4.0",
     "markdown-it": ">=13"
   },
   "packageManager": "pnpm@7.5.2"

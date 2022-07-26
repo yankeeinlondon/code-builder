@@ -73,7 +73,7 @@ devDependencies:
   tsup: 6.2.0_6oasmw356qmm23djlsjgkwvrtm
   typescript: 4.7.4
   vite: 3.0.3
-  vite-plugin-md: 0.20.0_bjs3vjaiqavgww6nukx6i7zq2y
+  vite-plugin-md: 0.20.0_75rtyigrj2mqzkytjcynmna4qq
   vitest: 0.19.1_q43bjyuxeod7kzn5qaz6knglby
   vue: 3.2.37
   vue-router: 4.1.2_vue@3.2.37
@@ -624,7 +624,7 @@ packages:
       fp-ts: 2.12.2
       inferred-types: 0.22.0
       markdown-it: 13.0.1
-      vite-plugin-md: 0.20.0_bjs3vjaiqavgww6nukx6i7zq2y
+      vite-plugin-md: 0.20.0_75rtyigrj2mqzkytjcynmna4qq
       vue: 3.2.37
     transitivePeerDependencies:
       - happy-dom
@@ -2888,8 +2888,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/2.77.0:
-    resolution: {integrity: sha512-vL8xjY4yOQEw79DvyXLijhnhh+R/O9zpF/LEgkCebZFtb6ELeN9H3/2T0r8+mp+fFTBHZ5qGpOpW2ela2zRt3g==}
+  /rollup/2.77.1:
+    resolution: {integrity: sha512-GhutNJrvTYD6s1moo+kyq7lD9DeR5HDyXo4bDFlDSkepC9kVKY+KK/NSZFzCmeXeia3kEzVuToQmHRdugyZHxw==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -3313,7 +3313,7 @@ packages:
       joycon: 3.1.1
       postcss-load-config: 3.1.4_ts-node@10.9.1
       resolve-from: 5.0.0
-      rollup: 2.77.0
+      rollup: 2.77.1
       source-map: 0.8.0-beta.0
       sucrase: 3.24.0
       tree-kill: 1.2.2
@@ -3422,7 +3422,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-md/0.20.0_bjs3vjaiqavgww6nukx6i7zq2y:
+  /vite-plugin-md/0.20.0_75rtyigrj2mqzkytjcynmna4qq:
     resolution: {integrity: sha512-koOINU9h1OIx+8PNq2++edaBevPE11tuZH2fKo91GISkXc1ITbecJQ4xzZAgnffssUbW0BOGvSR9QzFBQwtIzA==}
     peerDependencies:
       '@rollup/pluginutils': ^4.2.1
@@ -3435,7 +3435,7 @@ packages:
       '@yankeeinlondon/happy-wrapper': 2.5.0_happy-dom@6.0.4
       gray-matter: 4.0.3
       markdown-it: 13.0.1
-      rollup: 2.77.0
+      rollup: 2.77.1
       source-map-js: 1.0.2
     transitivePeerDependencies:
       - fp-ts
@@ -3465,7 +3465,7 @@ packages:
       esbuild: 0.14.50
       postcss: 8.4.14
       resolve: 1.22.1
-      rollup: 2.77.0
+      rollup: 2.77.1
     optionalDependencies:
       fsevents: 2.3.2
 
