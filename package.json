@@ -43,14 +43,12 @@
   },
   "dependencies": {
     "@unocss/vite": "^0.44.7",
-    "@yankeeinlondon/happy-wrapper": "^2.9.4",
+    "@yankeeinlondon/happy-wrapper": "^2.10.0",
     "@yankeeinlondon/builder-api": "^0.5.1",
     "inferred-types": "^0.37.6",
     "pathe": "^1.0.0",
     "prismjs": "^1.29.0",
-    "unocss": "^0.47.5"
-  },
-  "peerDependencies": {
+    "unocss": "^0.47.5",
     "markdown-it": ">=13"
   },
   "devDependencies": {

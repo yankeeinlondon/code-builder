@@ -13,7 +13,7 @@ specifiers:
   '@vitest/ui': ^0.25.6
   '@vue/test-utils': ^2.2.6
   '@yankeeinlondon/builder-api': ^0.5.1
-  '@yankeeinlondon/happy-wrapper': ^2.9.4
+  '@yankeeinlondon/happy-wrapper': ^2.10.0
   bumpp: ^8.2.1
   c8: ^7.12.0
   eslint: ^8.29.0
@@ -25,7 +25,7 @@ specifiers:
   fp-ts: ^2.13.1
   happy-dom: ^8.1.0
   inferred-types: ^0.37.6
-  markdown-it: ^13.0.1
+  markdown-it: '>=13'
   npm-run-all: ^4.1.5
   pathe: ^1.0.0
   prettier: ^2.8.1
@@ -43,8 +43,9 @@ specifiers:
 dependencies:
   '@unocss/vite': 0.44.7_vite@4.0.0
   '@yankeeinlondon/builder-api': 0.5.1_wi4yen2i5izpd74m5uukjd4glq
-  '@yankeeinlondon/happy-wrapper': 2.9.4_i5qw4nwoqftbdhqpyf6np2vrbm
+  '@yankeeinlondon/happy-wrapper': 2.10.0_akhykwkakfo22fr3ijibcj2b5m
   inferred-types: 0.37.6_jcvziur6i42ajcywqvhg6plwgi
+  markdown-it: 13.0.1
   pathe: 1.0.0
   prismjs: 1.29.0
   unocss: 0.47.5_rollup@3.7.0+vite@4.0.0
@@ -70,7 +71,6 @@ devDependencies:
   eslint-plugin-unicorn: 45.0.1_eslint@8.29.0
   fp-ts: 2.13.1
   happy-dom: 8.1.0
-  markdown-it: 13.0.1
   npm-run-all: 4.1.5
   prettier: 2.8.1
   rollup: 3.7.0
@@ -996,7 +996,7 @@ packages:
       vite-plugin-md: '>=0.20.4'
     dependencies:
       '@types/markdown-it': 12.2.3
-      '@yankeeinlondon/happy-wrapper': 2.9.4_i5qw4nwoqftbdhqpyf6np2vrbm
+      '@yankeeinlondon/happy-wrapper': 2.10.0_akhykwkakfo22fr3ijibcj2b5m
       fp-ts: 2.13.1
       inferred-types: 0.37.6_jcvziur6i42ajcywqvhg6plwgi
       markdown-it: 13.0.1
@@ -1005,6 +1005,7 @@ packages:
       - '@edge-runtime/vm'
       - '@vitest/browser'
       - '@vitest/ui'
+      - encoding
       - happy-dom
       - jsdom
       - less
@@ -1014,11 +1015,10 @@ packages:
       - supports-color
       - terser
 
-  /@yankeeinlondon/happy-wrapper/2.9.4_i5qw4nwoqftbdhqpyf6np2vrbm:
-    resolution: {integrity: sha512-D+NyypHpKMLr9xq5YThtDj+ba8LbEE7sGIhERHqmY0WkT/rw7qaTdfhUw+ckG1joIX3jr27zP7nXOlpqsAsJWQ==}
+  /@yankeeinlondon/happy-wrapper/2.10.0_akhykwkakfo22fr3ijibcj2b5m:
+    resolution: {integrity: sha512-gQ01fAcX+GP3kL0LRwZswLDz6sotzBD3kbU1n5bygM2geszFoQY/GetHiTHNuVNGBwhjD4vX+pQBxtuZ+ALSFw==}
     peerDependencies:
       fp-ts: ^2.13.1
-      happy-dom: ^8.1.0
     dependencies:
       fp-ts: 2.13.1
       happy-dom: 8.1.0
@@ -1027,6 +1027,7 @@ packages:
       - '@edge-runtime/vm'
       - '@vitest/browser'
       - '@vitest/ui'
+      - encoding
       - jsdom
       - less
       - sass
@@ -3763,7 +3764,7 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.0.2_rollup@3.7.0
       '@yankeeinlondon/builder-api': 0.5.1_wi4yen2i5izpd74m5uukjd4glq
-      '@yankeeinlondon/happy-wrapper': 2.9.4_i5qw4nwoqftbdhqpyf6np2vrbm
+      '@yankeeinlondon/happy-wrapper': 2.10.0_akhykwkakfo22fr3ijibcj2b5m
       gray-matter: 4.0.3
       markdown-it: 13.0.1
       rollup: 3.7.0
@@ -3772,6 +3773,7 @@ packages:
       - '@edge-runtime/vm'
       - '@vitest/browser'
       - '@vitest/ui'
+      - encoding
       - fp-ts
       - happy-dom
       - jsdom
