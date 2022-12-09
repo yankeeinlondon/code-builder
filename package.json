@@ -44,19 +44,19 @@
     "release:bump": "bumpp"
   },
   "dependencies": {
+    "@types/markdown-it": "^12.2.3",
     "@unocss/vite": "^0.44.7",
-    "@yankeeinlondon/happy-wrapper": "^2.10.0",
-    "@yankeeinlondon/builder-api": "^0.5.1",
+    "@yankeeinlondon/builder-api": "^0.5.5",
+    "@yankeeinlondon/happy-wrapper": "^2.10.1",
     "inferred-types": "^0.37.6",
+    "markdown-it": "^13.0.1",
     "pathe": "^1.0.0",
     "prismjs": "^1.29.0",
-    "unocss": "^0.47.5",
-    "markdown-it": ">=13"
+    "unocss": "^0.47.5"
   },
   "devDependencies": {
     "@antfu/ni": "^0.18.8",
     "@rollup/pluginutils": "^5.0.2",
-    "@types/markdown-it": "^12.2.3",
     "@types/node": "^16.18.7",
     "@types/prismjs": "^1.26.0",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
