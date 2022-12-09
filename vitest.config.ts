@@ -10,9 +10,6 @@ export default defineConfig({
     dir: "test",
     exclude: ["**/*.spec.ts"],
     environment: "happy-dom",
-    api: {
-      host: "0.0.0.0",
-    },
     coverage: {
       reporter: ["json", "html"]
     }

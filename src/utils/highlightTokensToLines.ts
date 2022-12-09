@@ -6,10 +6,11 @@ export function highlightTokensToLines(fence: CodeBlockMeta<"dom">): number[] {
 
   for (const t of fence.highlightTokens) {
     switch (t.kind) {
-      case "line":
+      case "line": {
         lines.push(t.line);
         break;
-      case "range":
+      }
+      case "range": {
         {
           let i = t.from;
           while (i <= t.to) {
@@ -18,6 +19,7 @@ export function highlightTokensToLines(fence: CodeBlockMeta<"dom">): number[] {
           }
         }
         break;
+      }
       case "symbol":
       // TODO: need to implement this
     }

@@ -22,7 +22,7 @@ export const defaultBlocks =
               payload.fileName,
               payload.frontmatter
             )
-          : typeof prop === "undefined"
+          : prop === undefined
           ? identity
           : prop;
 

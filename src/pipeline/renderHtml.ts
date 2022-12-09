@@ -11,12 +11,14 @@ export const renderHtml =
   (p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
   (fence: CodeBlockMeta<"dom">): CodeBlockMeta<"complete"> => {
     switch (o.layoutStructure) {
-      case "flex-lines":
+      case "flex-lines": {
         fence.codeBlockWrapper = flexLines(p, o, fence);
         break;
-      case "tabular":
+      }
+      case "tabular": {
         fence.codeBlockWrapper = tabularFormatting(p, fence);
         break;
+      }
     }
 
     if (fence.footer) {
