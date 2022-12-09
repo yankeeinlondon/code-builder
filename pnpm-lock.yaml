@@ -41,6 +41,7 @@ specifiers:
   vue-router: ^4.1.6
 
 dependencies:
+  '@types/markdown-it': 12.2.3
   '@unocss/vite': 0.44.7_vite@4.0.0
   '@yankeeinlondon/builder-api': 0.5.5_cvdt6yy2ii4qywfymwts2xrazq
   '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.6
@@ -53,7 +54,6 @@ dependencies:
 devDependencies:
   '@antfu/ni': 0.18.8
   '@rollup/pluginutils': 5.0.2_rollup@3.7.0
-  '@types/markdown-it': 12.2.3
   '@types/node': 16.18.7
   '@types/prismjs': 1.26.0
   '@typescript-eslint/eslint-plugin': 5.46.0_5mle7isnkfgjmrghnnczirv6iy
