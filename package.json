@@ -1,6 +1,6 @@
 {
   "name": "@yankeeinlondon/code-builder",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Adds code highlighting support to vite-plugin-md",
   "keywords": [
     "vitejs",
