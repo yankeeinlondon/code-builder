@@ -45,7 +45,6 @@
   },
   "dependencies": {
     "@types/markdown-it": "^12.2.3",
-    "@unocss/vite": "^0.44.7",
     "@yankeeinlondon/builder-api": "^0.5.8",
     "@yankeeinlondon/happy-wrapper": "^2.10.1",
     "inferred-types": "^0.37.6",
@@ -60,7 +59,7 @@
     "@types/prismjs": "^1.26.0",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
-    "@unocss/vite": "^0.47.5",
+    "@unocss/vite": "^0.47.6",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/ui": "^0.25.7",
     "@vue/test-utils": "^2.2.6",
