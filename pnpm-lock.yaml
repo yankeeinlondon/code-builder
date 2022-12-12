@@ -11,7 +11,7 @@ specifiers:
   '@vitejs/plugin-vue': ^4.0.0
   '@vitest/ui': ^0.25.7
   '@vue/test-utils': ^2.2.6
-  '@yankeeinlondon/builder-api': ^0.5.7
+  '@yankeeinlondon/builder-api': ^0.5.8
   '@yankeeinlondon/happy-wrapper': ^2.10.1
   bumpp: ^8.2.1
   c8: ^7.12.0
@@ -41,7 +41,7 @@ specifiers:
 dependencies:
   '@types/markdown-it': 12.2.3
   '@unocss/vite': 0.44.7_vite@4.0.0
-  '@yankeeinlondon/builder-api': 0.5.7_wseam7jol5fosfr2ptnnzp37q4
+  '@yankeeinlondon/builder-api': 0.5.8_7xd7ipqvkgytwzflupn24cxnca
   '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
   inferred-types: 0.37.6_7xd7ipqvkgytwzflupn24cxnca
   markdown-it: 13.0.1
@@ -73,7 +73,7 @@ devDependencies:
   tsup: 6.5.0_typescript@4.9.4
   typescript: 4.9.4
   vite: 4.0.0_@types+node@16.18.8
-  vite-plugin-md: 0.20.6_62ms55mjtb57i2gnz7ar4juga4
+  vite-plugin-md: 0.20.6_7xd7ipqvkgytwzflupn24cxnca
   vitest: 0.25.7_7xd7ipqvkgytwzflupn24cxnca
   vue: 3.2.45
   vue-router: 4.1.6_vue@3.2.45
@@ -988,17 +988,13 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@yankeeinlondon/builder-api/0.5.7_wseam7jol5fosfr2ptnnzp37q4:
-    resolution: {integrity: sha512-wj7p0EM35vGFTyggJur+Oa6vLAtWNh3hdK7tNvW1/Hi9R+50j9a8E4Ng3sxh6Ava1oJCr9LrqSLYSZBfweb72w==}
-    peerDependencies:
-      '@types/markdown-it': ^12.2.3
-      markdown-it: ^13.0.1
+  /@yankeeinlondon/builder-api/0.5.8_7xd7ipqvkgytwzflupn24cxnca:
+    resolution: {integrity: sha512-W86/uoKKDn3CYOljaAfUsHXi31qT+QzGN5rHT6mWClMSFGZhxEDG0hFTlZdSsywOZY856g+uuyW/KZ+EySP3gQ==}
     dependencies:
       '@types/markdown-it': 12.2.3
       '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
       fp-ts: 2.13.1
       inferred-types: 0.37.6_7xd7ipqvkgytwzflupn24cxnca
-      markdown-it: 13.0.1
       vite-plugin-md: 0.20.6_@vitest+ui@0.25.7
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -3774,17 +3770,16 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-plugin-md/0.20.6_62ms55mjtb57i2gnz7ar4juga4:
+  /vite-plugin-md/0.20.6_7xd7ipqvkgytwzflupn24cxnca:
     resolution: {integrity: sha512-9KOL9B+Dc5zb9ihl0pVodtfkOkfnxo0MUXNyWBGitnHQYWldw92L8rahvTbnW7Z4P0qTjVU3G3amfR+35ZxtCw==}
     dependencies:
-      '@yankeeinlondon/builder-api': 0.5.7_wseam7jol5fosfr2ptnnzp37q4
+      '@yankeeinlondon/builder-api': 0.5.8_7xd7ipqvkgytwzflupn24cxnca
       '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
       gray-matter: 4.0.3
       markdown-it: 13.0.1
       source-map-js: 1.0.2
     transitivePeerDependencies:
       - '@edge-runtime/vm'
-      - '@types/markdown-it'
       - '@vitest/browser'
       - '@vitest/ui'
       - encoding
@@ -3801,7 +3796,7 @@ packages:
   /vite-plugin-md/0.20.6_@vitest+ui@0.25.7:
     resolution: {integrity: sha512-9KOL9B+Dc5zb9ihl0pVodtfkOkfnxo0MUXNyWBGitnHQYWldw92L8rahvTbnW7Z4P0qTjVU3G3amfR+35ZxtCw==}
     dependencies:
-      '@yankeeinlondon/builder-api': 0.5.7_wseam7jol5fosfr2ptnnzp37q4
+      '@yankeeinlondon/builder-api': 0.5.8_7xd7ipqvkgytwzflupn24cxnca
       '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
       gray-matter: 4.0.3
       markdown-it: 13.0.1

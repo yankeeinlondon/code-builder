@@ -46,7 +46,7 @@
   "dependencies": {
     "@types/markdown-it": "^12.2.3",
     "@unocss/vite": "^0.44.7",
-    "@yankeeinlondon/builder-api": "^0.5.7",
+    "@yankeeinlondon/builder-api": "^0.5.8",
     "@yankeeinlondon/happy-wrapper": "^2.10.1",
     "inferred-types": "^0.37.6",
     "markdown-it": "^13.0.1",
