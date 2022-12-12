@@ -11,7 +11,7 @@ specifiers:
   '@vitejs/plugin-vue': ^4.0.0
   '@vitest/ui': ^0.25.7
   '@vue/test-utils': ^2.2.6
-  '@yankeeinlondon/builder-api': ^0.5.8
+  '@yankeeinlondon/builder-api': ^1.2.0
   '@yankeeinlondon/happy-wrapper': ^2.10.1
   bumpp: ^8.2.1
   c8: ^7.12.0
@@ -32,7 +32,7 @@ specifiers:
   tsup: ^6.5.0
   typescript: ^4.9.4
   unocss: ^0.47.6
-  vite: ^4.0.0
+  vite: ^4.0.1
   vite-plugin-md: ^0.20.6
   vitest: ^0.25.7
   vue: ^3.2.45
@@ -40,13 +40,13 @@ specifiers:
 
 dependencies:
   '@types/markdown-it': 12.2.3
-  '@yankeeinlondon/builder-api': 0.5.8_7xd7ipqvkgytwzflupn24cxnca
+  '@yankeeinlondon/builder-api': 1.2.0_7xd7ipqvkgytwzflupn24cxnca
   '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
   inferred-types: 0.37.6_7xd7ipqvkgytwzflupn24cxnca
   markdown-it: 13.0.1
   pathe: 1.0.0
   prismjs: 1.29.0
-  unocss: 0.47.6_vite@4.0.0
+  unocss: 0.47.6_vite@4.0.1
 
 devDependencies:
   '@antfu/ni': 0.18.8
@@ -54,8 +54,8 @@ devDependencies:
   '@types/prismjs': 1.26.0
   '@typescript-eslint/eslint-plugin': 5.46.1_imrg37k3svwu377c6q7gkarwmi
   '@typescript-eslint/parser': 5.46.1_ha6vam6werchizxrnqvarmz2zu
-  '@unocss/vite': 0.47.6_vite@4.0.0
-  '@vitejs/plugin-vue': 4.0.0_vite@4.0.0+vue@3.2.45
+  '@unocss/vite': 0.47.6_vite@4.0.1
+  '@vitejs/plugin-vue': 4.0.0_vite@4.0.1+vue@3.2.45
   '@vitest/ui': 0.25.7
   '@vue/test-utils': 2.2.6_vue@3.2.45
   bumpp: 8.2.1
@@ -72,7 +72,7 @@ devDependencies:
   prettier: 2.8.1
   tsup: 6.5.0_typescript@4.9.4
   typescript: 4.9.4
-  vite: 4.0.0_@types+node@16.18.8
+  vite: 4.0.1_@types+node@16.18.8
   vite-plugin-md: 0.20.6_7xd7ipqvkgytwzflupn24cxnca
   vitest: 0.25.7_7xd7ipqvkgytwzflupn24cxnca
   vue: 3.2.45
@@ -658,12 +658,12 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@unocss/astro/0.47.6_vite@4.0.0:
+  /@unocss/astro/0.47.6_vite@4.0.1:
     resolution: {integrity: sha512-8lR4KwuCeVxOTKk6g6hx6VUHhW1u+hki8oRsJaKEB0s5iUPmY6rCNtb/iaBJdceY11bZMMy5LZHJFTkod/T/zg==}
     dependencies:
       '@unocss/core': 0.47.6
       '@unocss/reset': 0.47.6
-      '@unocss/vite': 0.47.6_vite@4.0.0
+      '@unocss/vite': 0.47.6_vite@4.0.1
     transitivePeerDependencies:
       - rollup
       - vite
@@ -794,7 +794,7 @@ packages:
       '@unocss/core': 0.47.6
     dev: false
 
-  /@unocss/vite/0.47.6_vite@4.0.0:
+  /@unocss/vite/0.47.6_vite@4.0.1:
     resolution: {integrity: sha512-NL3A20sJHwMyCHOaxLlFXnr71QHEd118GN82e/mtFluEh7F3WyLndaZfWQLmLEeJ3z+P4nURFCLirZJIXr4XgQ==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -807,18 +807,18 @@ packages:
       '@unocss/scope': 0.47.6
       '@unocss/transformer-directives': 0.47.6
       magic-string: 0.27.0
-      vite: 4.0.0_@types+node@16.18.8
+      vite: 4.0.1_@types+node@16.18.8
     transitivePeerDependencies:
       - rollup
 
-  /@vitejs/plugin-vue/4.0.0_vite@4.0.0+vue@3.2.45:
+  /@vitejs/plugin-vue/4.0.0_vite@4.0.1+vue@3.2.45:
     resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.0.0_@types+node@16.18.8
+      vite: 4.0.1_@types+node@16.18.8
       vue: 3.2.45
     dev: true
 
@@ -922,8 +922,8 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@yankeeinlondon/builder-api/0.5.8_7xd7ipqvkgytwzflupn24cxnca:
-    resolution: {integrity: sha512-W86/uoKKDn3CYOljaAfUsHXi31qT+QzGN5rHT6mWClMSFGZhxEDG0hFTlZdSsywOZY856g+uuyW/KZ+EySP3gQ==}
+  /@yankeeinlondon/builder-api/1.2.0_7xd7ipqvkgytwzflupn24cxnca:
+    resolution: {integrity: sha512-InYsAyiYhaG8S7N2O1yrPKdEPT3BXAj03mIKy/XsdTDQJjRbYuyiJDWz/0qPHkpp3ldI2rHTr/rCT0F/aCwq9A==}
     dependencies:
       '@types/markdown-it': 12.2.3
       '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
@@ -3642,7 +3642,7 @@ packages:
       busboy: 1.6.0
     dev: false
 
-  /unocss/0.47.6_vite@4.0.0:
+  /unocss/0.47.6_vite@4.0.1:
     resolution: {integrity: sha512-cc+m2h/Iky24zwAKir9ElmIhkPYNjZEUTemInctWlVN8QX9qpzsRZahAl7ZmKsBorXPFtux/JYoUCCtXftyxOw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -3651,7 +3651,7 @@ packages:
       '@unocss/webpack':
         optional: true
     dependencies:
-      '@unocss/astro': 0.47.6_vite@4.0.0
+      '@unocss/astro': 0.47.6_vite@4.0.1
       '@unocss/cli': 0.47.6
       '@unocss/core': 0.47.6
       '@unocss/preset-attributify': 0.47.6
@@ -3667,7 +3667,7 @@ packages:
       '@unocss/transformer-compile-class': 0.47.6
       '@unocss/transformer-directives': 0.47.6
       '@unocss/transformer-variant-group': 0.47.6
-      '@unocss/vite': 0.47.6_vite@4.0.0
+      '@unocss/vite': 0.47.6_vite@4.0.1
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -3699,7 +3699,7 @@ packages:
   /vite-plugin-md/0.20.6_7xd7ipqvkgytwzflupn24cxnca:
     resolution: {integrity: sha512-9KOL9B+Dc5zb9ihl0pVodtfkOkfnxo0MUXNyWBGitnHQYWldw92L8rahvTbnW7Z4P0qTjVU3G3amfR+35ZxtCw==}
     dependencies:
-      '@yankeeinlondon/builder-api': 0.5.8_7xd7ipqvkgytwzflupn24cxnca
+      '@yankeeinlondon/builder-api': 1.2.0_7xd7ipqvkgytwzflupn24cxnca
       '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
       gray-matter: 4.0.3
       markdown-it: 13.0.1
@@ -3722,7 +3722,7 @@ packages:
   /vite-plugin-md/0.20.6_@vitest+ui@0.25.7:
     resolution: {integrity: sha512-9KOL9B+Dc5zb9ihl0pVodtfkOkfnxo0MUXNyWBGitnHQYWldw92L8rahvTbnW7Z4P0qTjVU3G3amfR+35ZxtCw==}
     dependencies:
-      '@yankeeinlondon/builder-api': 0.5.8_7xd7ipqvkgytwzflupn24cxnca
+      '@yankeeinlondon/builder-api': 1.2.0_7xd7ipqvkgytwzflupn24cxnca
       '@yankeeinlondon/happy-wrapper': 2.10.1_@vitest+ui@0.25.7
       gray-matter: 4.0.3
       markdown-it: 13.0.1
@@ -3740,8 +3740,8 @@ packages:
       - supports-color
       - terser
 
-  /vite/4.0.0_@types+node@16.18.8:
-    resolution: {integrity: sha512-ynad+4kYs8Jcnn8J7SacS9vAbk7eMy0xWg6E7bAhS1s79TK+D7tVFGXVZ55S7RNLRROU1rxoKlvZ/qjaB41DGA==}
+  /vite/4.0.1_@types+node@16.18.8:
+    resolution: {integrity: sha512-kZQPzbDau35iWOhy3CpkrRC7It+HIHtulAzBhMqzGHKRf/4+vmh8rPDDdv98SWQrFWo6//3ozwsRmwQIPZsK9g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3810,7 +3810,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 4.0.0_@types+node@16.18.8
+      vite: 4.0.1_@types+node@16.18.8
     transitivePeerDependencies:
       - less
       - sass

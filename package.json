@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@types/markdown-it": "^12.2.3",
-    "@yankeeinlondon/builder-api": "^0.5.8",
+    "@yankeeinlondon/builder-api": "^1.2.0",
     "@yankeeinlondon/happy-wrapper": "^2.10.1",
     "inferred-types": "^0.37.6",
     "markdown-it": "^13.0.1",
@@ -80,7 +80,7 @@
     "tsup": "^6.5.0",
     "typescript": "^4.9.4",
     "unocss": "^0.47.5",
-    "vite": "^4.0.0",
+    "vite": "^4.0.1",
     "vite-plugin-md": "^0.20.6",
     "vitest": "^0.25.7",
     "vue": "^3.2.45",
