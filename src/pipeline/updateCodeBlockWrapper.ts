@@ -10,7 +10,7 @@ import { Modifier } from "../types";
  * if line numbers are meant to be displayed.
  */
 export const updateCodeBlockWrapper =
-  (p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
+  (_p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
   (fence: CodeBlockMeta<"dom">): CodeBlockMeta<"dom"> => {
     fence.codeBlockWrapper = select(fence.codeBlockWrapper)
       .update(

@@ -7,7 +7,7 @@ import type { Pipeline, PipelineStage } from "vite-plugin-md";
 import type { BlockCallback, CodeBlockMeta, CodeOptions } from "../types";
 
 function mergeClasses(
-  payload: Pipeline<PipelineStage.parser>,
+  _payload: Pipeline<PipelineStage.parser>,
   optionConfig: string[] | BlockCallback<string[]> | undefined,
   fence: CodeBlockMeta<"code">,
   prop: keyof CodeBlockMeta<"code">["props"]

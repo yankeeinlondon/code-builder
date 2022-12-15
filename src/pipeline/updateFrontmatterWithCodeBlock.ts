@@ -1,5 +1,5 @@
-import type { CodeBlockMeta, CodeOptions } from "../types";
-import type { CodeBlockSummary, Pipeline, PipelineStage } from "vite-plugin-md";
+import type { CodeBlockMeta, CodeBlockSummary, CodeOptions } from "../types";
+import type { Pipeline, PipelineStage } from "vite-plugin-md";
 import { highlightTokensToLines } from "../utils";
 
 export const updateFrontmatterWithCodeBlock =
@@ -18,7 +18,7 @@ export const updateFrontmatterWithCodeBlock =
       p.frontmatter = {
         ...p.frontmatter,
         _codeBlocks: p.frontmatter._codeBlocks
-          ? [...p.frontmatter._codeBlocks, info]
+          ? [...(p.frontmatter._codeBlocks as CodeBlockSummary[]), info]
           : [info],
       };
     }

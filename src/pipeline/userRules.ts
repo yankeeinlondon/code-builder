@@ -13,6 +13,6 @@ export const userRules =
   ) =>
   (fence: CodeBlockMeta<W extends "before" ? "code" : "dom">) => {
     return (
-      o[when] ? o[when](fence as CodeBlockMeta<any>, p, o) : fence
+      o[when] ? o[when](fence as any, p, o) : fence
     ) as CodeBlockMeta<W extends "before" ? "code" : "dom">;
   };

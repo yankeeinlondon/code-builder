@@ -1,5 +1,9 @@
 import { pipe } from "fp-ts/lib/function.js";
-import type { Fragment, IElement } from "@yankeeinlondon/happy-wrapper";
+import type {
+  ContainerOrHtml,
+  Fragment,
+  IElement,
+} from "@yankeeinlondon/happy-wrapper";
 import {
   addClass,
   createElement,
@@ -33,11 +37,11 @@ const specificLine = (i: number, aboveTheFold: number) => {
  */
 const addLinesToContainer = (
   fence: CodeBlockMeta<"dom">,
-  o: CodeOptions,
+  _o: CodeOptions,
   aboveTheFold = 0
 ) => {
   return (wrapper: Fragment) => {
-    const children: IElement[] = [];
+    const children: ContainerOrHtml[] = [];
     for (
       let lineNumber = 1 - aboveTheFold;
       fence.codeLinesCount >= lineNumber;
@@ -50,7 +54,7 @@ const addLinesToContainer = (
       children.push(child);
     }
 
-    return wrap(children)(wrapper);
+    return wrap(...children)(wrapper);
   };
 };
 

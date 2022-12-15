@@ -19,9 +19,9 @@ function extractTypedValuesFromCSV(
     ? true
     : value === "false"
     ? false
-    : !Number.isNaN(value)
-    ? Number(value)
-    : value;
+    : Number.isNaN(value)
+    ? value
+    : Number(value);
 }
 
 function protectArrays(csv: string) {
@@ -45,7 +45,7 @@ function protectArrays(csv: string) {
  */
 export const parseCSVSyntax = (
   csv: string,
-  p: Pipeline<PipelineStage.parser>,
+  _p: Pipeline<PipelineStage.parser>,
   fence: CodeBlockMeta<"code">
 ): CodeBlockMeta<"code"> => {
   csv = protectArrays(csv);
