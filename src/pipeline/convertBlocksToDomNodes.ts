@@ -3,11 +3,11 @@ import {
   safeString,
   select,
 } from "@yankeeinlondon/happy-wrapper";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { BlockCallback, CodeBlockMeta, CodeOptions } from "../types";
 
-function mergeClasses(
-  _payload: Pipeline<PipelineStage.parser>,
+function mergeClasses<P extends Pipeline<"parser", any>>(
+  _payload: P,
   optionConfig: string[] | BlockCallback<string[]> | undefined,
   fence: CodeBlockMeta<"code">,
   prop: keyof CodeBlockMeta<"code">["props"]
@@ -30,7 +30,7 @@ function mergeClasses(
  * converts string representations to DOM nodes
  */
 export const convertBlocksToDomNodes =
-  (p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
+  <P extends Pipeline<"parser", any>>(p: P, o: CodeOptions) =>
   (fence: CodeBlockMeta<"code">): CodeBlockMeta<"dom"> => {
     const code = createFragment(fence.code);
     const codeLinesCount = select(code).findAll(".code-line").length;

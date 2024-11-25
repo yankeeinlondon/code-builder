@@ -1,6 +1,6 @@
 import { pipe } from "fp-ts/lib/function.js";
 import type MarkdownIt from "markdown-it";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { CodeOptions } from "../types";
 import {
   addClipboard,
@@ -25,12 +25,13 @@ import { establishHighlighter } from "./establishHighlighter";
  * A higher-order function which receives payload and options for context up front
  * and then can be added as Markdown plugin using the standard `.use()` method.
  */
-export const fence = async (payload: Pipeline<PipelineStage.parser>, options: CodeOptions) => {
+export const fence = async <P extends Pipeline<"parser", any>>(
+  payload: P,
+  options: CodeOptions
+) => {
   const highlighter = await establishHighlighter(options);
   // return a Markdown-IT plugin
-  return (
-    md: MarkdownIt,
-  ) => {
+  return (md: MarkdownIt) => {
     md.renderer.rules.fence = (state, idx) => {
       // fence mutation pipeline
       const fence = pipe(
@@ -53,7 +54,7 @@ export const fence = async (payload: Pipeline<PipelineStage.parser>, options: Co
 
         addLanguage(options),
         addClipboard(payload, options),
-        renderHtml(payload, options),
+        renderHtml(payload, options)
       );
 
       return fence.html;

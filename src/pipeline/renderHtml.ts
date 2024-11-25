@@ -1,5 +1,5 @@
 import { toHtml } from "@yankeeinlondon/happy-wrapper";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { CodeBlockMeta, CodeOptions } from "../types";
 import { flexLines } from "./rendering/flex-lines";
 import { tabularFormatting } from "./rendering/tabular";
@@ -8,7 +8,7 @@ import { tabularFormatting } from "./rendering/tabular";
  * Renders the HTML which results from the code block transform pipeline
  */
 export const renderHtml =
-  (p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
+  <P extends Pipeline<"parser", any>>(p: P, o: CodeOptions) =>
   (fence: CodeBlockMeta<"dom">): CodeBlockMeta<"complete"> => {
     switch (o.layoutStructure) {
       case "flex-lines": {

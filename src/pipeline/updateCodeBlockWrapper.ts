@@ -1,6 +1,6 @@
 import { flow, identity } from "fp-ts/lib/function.js";
 import { addClass, select, setAttribute } from "@yankeeinlondon/happy-wrapper";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { CodeBlockMeta, CodeOptions } from "../types";
 import { Modifier } from "../types";
 
@@ -10,7 +10,7 @@ import { Modifier } from "../types";
  * if line numbers are meant to be displayed.
  */
 export const updateCodeBlockWrapper =
-  (_p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
+  (_p: Pipeline<"parser">, o: CodeOptions) =>
   (fence: CodeBlockMeta<"dom">): CodeBlockMeta<"dom"> => {
     fence.codeBlockWrapper = select(fence.codeBlockWrapper)
       .update(

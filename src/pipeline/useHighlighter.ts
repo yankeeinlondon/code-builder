@@ -1,4 +1,4 @@
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type {
   CodeBlockMeta,
   CodeOptions,
@@ -43,7 +43,7 @@ const klass = (
  * stored as `lang` on payload.
  */
 export const useHighlighter =
-  (p: Pipeline<PipelineStage.parser>, h: Highlighter, o: CodeOptions) =>
+  <P extends Pipeline<"parser", any>>(p: P, h: Highlighter, o: CodeOptions) =>
   (fence: CodeBlockMeta<"code">): CodeBlockMeta<"code"> => {
     const requestedLang = fence.lang;
     const [code, lang] = h(

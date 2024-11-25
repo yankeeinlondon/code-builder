@@ -1,9 +1,9 @@
 import type { CodeBlockMeta, CodeBlockSummary, CodeOptions } from "../types";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import { highlightTokensToLines } from "../utils";
 
 export const updateFrontmatterWithCodeBlock =
-  (p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
+  <P extends Pipeline<"parser", any>>(p: P, o: CodeOptions) =>
   (fence: CodeBlockMeta<"dom">): CodeBlockMeta<"dom"> => {
     if (o.injectIntoFrontmatter) {
       const info: CodeBlockSummary = {

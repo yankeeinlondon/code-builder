@@ -1,4 +1,4 @@
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { CodeBlockMeta } from "../types";
 import { Modifier } from "../types";
 
@@ -8,7 +8,7 @@ import { Modifier } from "../types";
  * prior to the code highlighter being introduced.
  */
 export const expandCodeBlockVariables =
-  (p: Pipeline<PipelineStage.parser>) =>
+  <P extends Pipeline<"parser", any>>(p: P) =>
   (fence: CodeBlockMeta<"code">): CodeBlockMeta<"code"> => {
     if (
       (p.options.escapeCodeTagInterpolation &&

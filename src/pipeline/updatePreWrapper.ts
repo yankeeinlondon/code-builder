@@ -5,7 +5,7 @@ import {
   setAttribute,
   toHtml,
 } from "@yankeeinlondon/happy-wrapper";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { CodeBlockMeta } from "../types";
 import { Modifier } from "../types";
 
@@ -17,7 +17,7 @@ import { Modifier } from "../types";
  * block here.
  */
 export const updatePreWrapper =
-  (p: Pipeline<PipelineStage.parser>) =>
+  <P extends Pipeline<"parser", any>>(p: P) =>
   (fence: CodeBlockMeta<"dom">): CodeBlockMeta<"dom"> => {
     const code = fence.aboveTheFoldCode
       ? [fence.code, fence.aboveTheFoldCode]

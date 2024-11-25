@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "pathe";
 import { toHtml } from "@yankeeinlondon/happy-wrapper";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { CodeBlockMeta, Modifier } from "../types";
 import { parseCSVSyntax, parseObjectSyntax } from "./markdownItTokens";
 
@@ -11,7 +11,7 @@ function extractVPressFileSyntax(meta: string) {
   return [front.trim(), back ? back.trim() : null] as [string, string | null];
 }
 
-function loadFile(codeFile: string, pipeline: Pipeline<PipelineStage.parser>) {
+function loadFile(codeFile: string, pipeline: Pipeline<"parser">) {
   const { fileName } = pipeline;
   codeFile = codeFile.replace(/^[@~]\//, "/");
 
@@ -34,7 +34,7 @@ function loadFile(codeFile: string, pipeline: Pipeline<PipelineStage.parser>) {
  * which includes the language, modifiers, props, and code block.
  */
 export function extractMarkdownItTokens(
-  p: Pipeline<PipelineStage.parser>,
+  p: Pipeline<"parser">,
   t: any
 ): CodeBlockMeta<"code"> {
   const [info, vuepressFile] = extractVPressFileSyntax(t.info);

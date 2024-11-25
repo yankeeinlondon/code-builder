@@ -26,7 +26,7 @@ export interface ObjectParseVariables {
  */
 export const parseObjectSyntax = (
   objCandidate: string | undefined,
-  p: Pipeline<PipelineStage.parser>,
+  p: Pipeline<"parser">,
   fence: CodeBlockMeta<"code">
 ): CodeBlockMeta<"code"> => {
   // eslint-disable-next-line prefer-const
@@ -36,13 +36,13 @@ export const parseObjectSyntax = (
     const props = objCandidate ? JSON.parse(objCandidate) : fence.props;
     // highlighting logic
     if (hasHighlightProperty(props)) {
-      const highlight = !Array.isArray(props.highlight)
-        ? [props.highlight]
-        : props.highlight;
+      const highlight = Array.isArray(props.highlight)
+        ? props.highlight
+        : [props.highlight];
 
       for (const h of highlight) {
         switch (typeof h) {
-          case "string":
+          case "string": {
             if (isRangeRepresentation(h)) {
               const [from, to] = h.split(/\s*-\s*/).map(Number);
               highlightTokens.push({ kind: "range", from, to });
@@ -52,10 +52,12 @@ export const parseObjectSyntax = (
               );
             }
             break;
-          case "number":
+          }
+          case "number": {
             highlightTokens.push({ kind: "line", line: h });
             break;
-          case "object":
+          }
+          case "object": {
             if (isSymbolRepresentation(h)) {
               highlightTokens.push({ kind: "symbol", symbol: h.symbol });
             } else if (isObjectRangeRepresentation(h)) {
@@ -71,12 +73,14 @@ export const parseObjectSyntax = (
             }
 
             break;
-          default:
+          }
+          default: {
             console.warn(
               `the "${
                 p?.fileName
               }" file has a highlight token which is of type "${typeof h}"; this is not parsabe and will be ignored.`
             );
+          }
         }
       }
     }
@@ -107,12 +111,12 @@ export const parseObjectSyntax = (
         if (isRangeRepresentation(t)) {
           const [from, to] = t.split(/\s*-\s*/).map(Number);
           highlightTokens.push({ kind: "range", from, to });
-        } else if (!Number.isNaN(Number(t))) {
-          highlightTokens.push({ kind: "line", line: Number(t) });
-        } else {
+        } else if (Number.isNaN(Number(t))) {
           console.warn(
             `the "${p?.fileName}" file is using Vuepress/Vitepress syntax to highlight lines but the token "${t}" is not parsable and will be ignored`
           );
+        } else {
+          highlightTokens.push({ kind: "line", line: Number(t) });
         }
       }
 

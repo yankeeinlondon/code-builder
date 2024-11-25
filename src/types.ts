@@ -259,7 +259,7 @@ export type Highlighter = (
 export type BlockCallback<T> = <S extends CodeParsingStage>(
   fence: CodeBlockMeta<S>,
   filename: string,
-  frontmatter: Pipeline<PipelineStage.parser>["frontmatter"]
+  frontmatter: Pipeline<"parser">["frontmatter"]
 ) => T;
 
 /**
@@ -289,7 +289,7 @@ export interface CodeOptions {
    */
   before: (
     fence: CodeBlockMeta<"code">,
-    payload: Pipeline<PipelineStage.parser>,
+    payload: Pipeline<"parser">,
     options: CodeOptions
   ) => CodeBlockMeta<"code">;
   /**
@@ -298,7 +298,7 @@ export interface CodeOptions {
    */
   after: (
     fence: CodeBlockMeta<"dom">,
-    payload: Pipeline<PipelineStage.parser>,
+    payload: Pipeline<"parser">,
     options: CodeOptions
   ) => CodeBlockMeta<"dom">;
 

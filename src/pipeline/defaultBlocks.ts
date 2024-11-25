@@ -1,6 +1,6 @@
 import { identity, pipe } from "fp-ts/lib/function.js";
 import { addClass, append } from "@yankeeinlondon/happy-wrapper";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { BlockCallback, CodeBlockMeta, CodeOptions } from "../types";
 
 /**
@@ -8,7 +8,7 @@ import type { BlockCallback, CodeBlockMeta, CodeOptions } from "../types";
  * well as establish the blocks for `heading` and `footer`.
  */
 export const defaultBlocks =
-  (payload: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
+  (payload: Pipeline<"parser">, o: CodeOptions) =>
   (fence: CodeBlockMeta<"code">): CodeBlockMeta<"code"> => {
     /**
      * Resolves properties which can have either a discrete value or a callback

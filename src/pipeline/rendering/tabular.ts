@@ -38,7 +38,7 @@ import type { CodeBlockMeta } from "../../types";
  * ```
  */
 export const tabularFormatting = (
-  p: Pipeline<PipelineStage.parser>,
+  p: Pipeline<"parser">,
   fence: CodeBlockMeta<"dom">
 ): Fragment => {
   const toTable = changeTagName("table");

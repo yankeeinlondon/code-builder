@@ -45,7 +45,7 @@ function protectArrays(csv: string) {
  */
 export const parseCSVSyntax = (
   csv: string,
-  _p: Pipeline<PipelineStage.parser>,
+  _p: Pipeline<"parser">,
   fence: CodeBlockMeta<"code">
 ): CodeBlockMeta<"code"> => {
   csv = protectArrays(csv);

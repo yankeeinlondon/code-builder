@@ -19,7 +19,7 @@ import { Modifier } from "../../types";
  * appear next to the code
  */
 export const flexLines = (
-  p: Pipeline<PipelineStage.parser>,
+  p: Pipeline<"parser">,
   o: CodeOptions,
   fence: CodeBlockMeta<"dom">
 ): Fragment => {

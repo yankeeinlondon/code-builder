@@ -1,5 +1,5 @@
 import { createInlineStyle } from "@yankeeinlondon/happy-wrapper";
-import type { Pipeline, PipelineStage } from "vite-plugin-md";
+import type { Pipeline } from "vite-plugin-md";
 import type { CodeBlockMeta, CodeOptions } from "../types";
 import { setCodeBlockColors } from "../styles/color/setCodeBlockColors";
 
@@ -7,7 +7,7 @@ import { setCodeBlockColors } from "../styles/color/setCodeBlockColors";
  * Applies all inline styles as VueJS <script /> blocks
  */
 export const inlineStyles =
-  (p: Pipeline<PipelineStage.parser>, o: CodeOptions) =>
+  <P extends Pipeline<"parser", any>>(p: P, o: CodeOptions) =>
   (fence: CodeBlockMeta<"dom">): CodeBlockMeta<"dom"> => {
     if (p.codeBlockLanguages.langsRequested.length > 0) {
       const style = createInlineStyle()
